@@ -13,7 +13,7 @@ const router = createRouter({
       component: Home
     },
     {
-      path: '/task',
+      path: '/task/:id',
       name: 'task',
       component: Task
     },
@@ -23,7 +23,7 @@ const router = createRouter({
       component: Comments
     },
     {
-      path: '/profile',
+      path: '/profile/:id',
       name: 'profile',
       component: Profile
     },
