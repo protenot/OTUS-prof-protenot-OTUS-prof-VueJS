@@ -2,9 +2,7 @@
 
 <script setup lang="ts"></script>
 
-<template>
-  Profile
-</template>    
+<template>Profile</template>
 
 <style scoped>
 /* @import './assets/style/main.css' */

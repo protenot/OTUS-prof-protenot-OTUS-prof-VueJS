@@ -2,9 +2,7 @@
 
 <script setup lang="ts"></script>
 
-<template>
-  Comments
-</template>    
+<template>Comments</template>
 
 <style scoped>
 /* @import './assets/style/main.css' */

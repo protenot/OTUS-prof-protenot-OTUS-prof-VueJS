@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home  from '../views/Home.vue'
-import Comments  from '../views/Comments.vue'
-import Profile  from '../views/Profile.vue'
-import ChosenTask  from '../components/ChosenTask.vue'
+import Home from '../views/Home.vue'
+import Comments from '../views/Comments.vue'
+import Profile from '../views/Profile.vue'
+import ChosenTask from '../components/ChosenTask.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -26,7 +26,7 @@ const router = createRouter({
       path: '/profile/:id',
       name: 'profile',
       component: Profile
-    },
+    }
   ]
 })
 
