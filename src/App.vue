@@ -12,7 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/task:id">Task</RouterLink>
+       <!--  <RouterLink to="/task:id">Task</RouterLink> -->
       </nav>
     </div>
   </header>
