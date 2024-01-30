@@ -17,7 +17,7 @@ export default {
 
 <template>
   <div>
-  <TasklList :tasks ="tasks"/>
+  <TaskList :tasks ="tasks"/>
   </div>
 </template>    
 
