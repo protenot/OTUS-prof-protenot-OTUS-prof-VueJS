@@ -1,8 +1,9 @@
 <template>
   <div>
       <h1>Список задач</h1>
-      <div>
-          <label for="complexityFilter">Фильтр по сложности</label>
+      <div class = "filtr">
+      <div >
+          <label for="complexityFilter">Выберете сложность :</label>
           <select v-model = "selectedComplexity" @change = "filterTasks">
               <option value="">Все сложности</option>
               <option value="5">Легкие</option>
@@ -12,7 +13,7 @@
       </div>
   
       <div>
-        <label for="languageFilter">Фильтр по языку:</label>
+        <label for="languageFilter">Выберете язык:</label>
         <select v-model="selectedLanguage" @change="filterTasks">
           <option value="">Все языки</option>
           <option value="JavaScript">JavaScript</option>
@@ -21,7 +22,7 @@
       </div>
   
       <div>
-        <label for="tagFilter">Фильтр по тегу:</label>
+        <label for="tagFilter">Выберете тег:</label>
         <select v-model="selectedTag" @change="filterTasks">
           <option value="">Все теги</option>
           <option value="Aлгоритмы">Aлгоритмы</option>
@@ -29,31 +30,41 @@
           <option value="Динамическое программирование">Динамическое программирование</option>
         </select>
       </div>
+    </div>
       <ul>
         <li v-for="task in filteredTasks" :key="task.id">
           <h3>{{ task.description }}</h3>
           <p>Сложность: {{ task.complexity }}</p>
           <p>Язык: {{ task.language }}</p>
           <p>Тег: {{ task.tag }}</p>
+          <button @click="selectTask(task.id)"> Выбрать задачу</button>
+          <button> Посмотреть комментарии</button>
         </li>
       </ul>
-  
+      <ChosenTask :task="selectedTask" v-if="selectedTask" />
   </div>
-  
+
   </template>
   <script lang="ts">
+  import ChosenTask from "@/components/ChosenTask.vue";
   import { type Task } from '@/models/task.model';
+  import {TASKS} from "@/fakeDB/tasks";
   export default {
     data() {
       return {
+        tasks: TASKS,
+      selectedTaskId: null as string|null,
         selectedComplexity: "",
         selectedLanguage: "",
         selectedTag: "",
       };
     },
-    props: {
+    components: {
+    ChosenTask,
+  },
+   /*   props: {
       tasks: Array,
-    },
+    },  */
     computed: {
       filteredTasks() {
       
@@ -65,14 +76,28 @@
           return complexityFilter && languageFilter && tagFilter;
         });
       },
+      selectedTask() {
+      return this.tasks.find(task => task.id === this.selectedTaskId);
     },
+    },
+
+
     methods: {
       filterTasks() {
-        // Вызовите этот метод при изменении фильтров
+        
       },
+      selectTask(taskId: string) {
+      this.selectedTaskId = taskId as string;
+      this.$router.push(`/task/${taskId}`)
+    },
     },
   };
   </script>
+  <style>
+.filtr{
+  display: flex;
+}
+  </style>
 
 /* <!-- <template>
   <div class="item">
