@@ -4,7 +4,7 @@
     <div class="filtr">
       <div>
         <label for="complexityFilter">Выберете сложность :</label>
-        <select v-model="selectedComplexity" @change="filterTasks">
+        <select id="complexityFilter" v-model="selectedComplexity" @change="filterTasks">
           <option value="">Все сложности</option>
           <option value="5">Легкие</option>
           <option value="15">Средние</option>
@@ -14,7 +14,7 @@
 
       <div>
         <label for="languageFilter">Выберете язык:</label>
-        <select v-model="selectedLanguage" @change="filterTasks">
+        <select id="languageFilter" v-model="selectedLanguage" @change="filterTasks">
           <option value="">Все языки</option>
           <option value="JavaScript">JavaScript</option>
           <option value="TypeScript">TypeScript</option>
@@ -23,7 +23,7 @@
 
       <div>
         <label for="tagFilter">Выберете тег:</label>
-        <select v-model="selectedTag" @change="filterTasks">
+        <select id="tagFilter" v-model="selectedTag" @change="filterTasks">
           <option value="">Все теги</option>
           <option value="Aлгоритмы">Aлгоритмы</option>
           <option value="Cтруктуры данных">Cтруктуры данных</option>
