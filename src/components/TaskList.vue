@@ -91,8 +91,7 @@ return this.comments.find((comment)=>comment.idTask === this.selectedTaskId)
   },
 },
   methods: {
-    filterTasks() {},
-
+  filterTasks(){},
 
     selectTask(taskId: string) {
       this.selectedTaskId = taskId as string

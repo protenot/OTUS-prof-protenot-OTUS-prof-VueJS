@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-//import Comments from '../views/Comments.vue'
-import Profile from '../views/Profile.vue'
+import ChosenUser from '../components/ChosenUser.vue'
+import UserList from '../components/UserList.vue'
 import ChosenTask from '../components/ChosenTask.vue'
 import ChosenComment from '../components/ChosenComment.vue'
 const router = createRouter({
@@ -23,9 +23,15 @@ const router = createRouter({
       component: ChosenComment
     },
     {
-      path: '/profile/:id',
+      path: '/users',
+      name: 'users',
+      component: UserList
+    },
+    
+    {
+      path: '/users/:id',
       name: 'profile',
-      component: Profile
+      component: ChosenUser
     }
   ]
 })

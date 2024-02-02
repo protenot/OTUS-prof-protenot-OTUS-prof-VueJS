@@ -24,9 +24,6 @@ onMounted(() => {
   loadTask(taskId)
 })
 
-/* function editorChange(val: string) {
-  console.log(val)
-} */
 const compareSolutionWrapper = () => {
   const inputValue = ref('');
   compareSolution(inputValue.value);
