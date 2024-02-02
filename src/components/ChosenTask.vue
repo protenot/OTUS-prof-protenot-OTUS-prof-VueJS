@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import { TASKS } from '@/fakeDB/tasks'
-import type { Task } from '@/models/task.model'
-import { ref, onMounted} from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { TASKS } from '@/fakeDB/tasks';
+import type { Task } from '@/models/task.model';
+import { ref, onMounted } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 import Monaco from './Monaco.vue'
 //import editor from './Monaco.vue'
 
@@ -16,7 +16,7 @@ const goBack = () => {
 
 const loadTask = (taskId: string) => {
   localTask.value = TASKS.find((task) => task.id === taskId) || null
-  console.log (taskId)
+  console.log(taskId)
 }
 
 onMounted(() => {
@@ -28,18 +28,16 @@ function editorChange(val: string) {
   console.log(val)
 }
 
-const compareSolution = ()=> {
+const compareSolution = () => {
   //console.log('val '+JSON.stringify(val))
   const originalSolution = localTask.value?.solution
-  const inputValue =  'Здесь будет решение задачи 1'
-if ( inputValue == originalSolution){
-  
-  console.log('originalSolution '+originalSolution)
-console.log("Все правильно!")
-}else{
-  console.log("Попробуйте еще раз!")
-}
-
+  const inputValue = 'Здесь будет решение задачи 1'
+  if (inputValue == originalSolution) {
+    console.log('originalSolution ' + originalSolution)
+    console.log('Все правильно!')
+  } else {
+    console.log('Попробуйте еще раз!')
+  }
 }
 </script>
 <template>
@@ -49,7 +47,7 @@ console.log("Все правильно!")
     <p v-if="localTask">Сложность: {{ localTask?.complexity }}</p>
     <p v-if="localTask">Язык: {{ localTask?.language }}</p>
     <p v-if="localTask">Тег: {{ localTask?.tag }}</p>
-    <Monaco 
+    <Monaco
       id="monaco"
       ref="monacoEdit"
       :value="''"

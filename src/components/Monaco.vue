@@ -76,7 +76,7 @@ onMounted(() => {
   })
   editor.value = monaco.editor.create(editorContainer.value, {
     value: data.value,
-   language: '',
+    language: '',
     folding: true, // Следует ли сворачивать
     foldingHighlight: true, // Складывающаяся высокая линия
     foldingStrategy: 'indentation', // Стратегия сворачивания  auto | indentation
@@ -104,7 +104,7 @@ watchEffect(() => {
   //Прослушайте изменения в значении родительского компонента и переназначите значение редактору
   if (editor.value) toRaw(editor.value).setValue(props.value)
 })
-console.log (watchEffect)
+console.log(watchEffect)
 </script>
 <template>
   <div class="editorapp">

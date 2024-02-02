@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Comments from '../views/Comments.vue'
+//import Comments from '../views/Comments.vue'
 import Profile from '../views/Profile.vue'
 import ChosenTask from '../components/ChosenTask.vue'
-
+import ChosenComment from '../components/ChosenComment.vue'
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -18,9 +18,9 @@ const router = createRouter({
       component: ChosenTask
     },
     {
-      path: '/comments',
+      path: '/comments/:idTask',
       name: 'comments',
-      component: Comments
+      component: ChosenComment
     },
     {
       path: '/profile/:id',
