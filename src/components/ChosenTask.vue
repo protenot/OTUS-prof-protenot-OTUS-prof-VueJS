@@ -4,7 +4,7 @@ import type { Task } from '@/models/task.model';
 import { ref, onMounted } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
 import Monaco from './Monaco.vue'
-//import editor from './Monaco.vue'
+
 
 const localTask = ref(null as Task | null)
 
@@ -24,14 +24,17 @@ onMounted(() => {
   loadTask(taskId)
 })
 
-function editorChange(val: string) {
+/* function editorChange(val: string) {
   console.log(val)
-}
-
-const compareSolution = () => {
+} */
+const compareSolutionWrapper = () => {
+  const inputValue = ref('');
+  compareSolution(inputValue.value);
+};
+const compareSolution = (inputValue: string) => {
   //console.log('val '+JSON.stringify(val))
   const originalSolution = localTask.value?.solution
-  const inputValue = 'Здесь будет решение задачи 1'
+ // const inputValue = null// дописать реализацию
   if (inputValue == originalSolution) {
     console.log('originalSolution ' + originalSolution)
     console.log('Все правильно!')
@@ -54,8 +57,8 @@ const compareSolution = () => {
       :readonly="false"
       type="curl"
       :height="300"
-      @contentChange="editorChange"
+      @contentChange="inputValue => compareSolution(inputValue)"
     ></Monaco>
-    <button @click="compareSolution">Сравнить с решением</button>
+    <button @click="compareSolutionWrapper">Сравнить с решением</button>
   </div>
 </template>
