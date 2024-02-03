@@ -29,9 +29,9 @@ const compareSolutionWrapper = () => {
   compareSolution(inputValue.value);
 };
 const compareSolution = (inputValue: string) => {
-  //console.log('val '+JSON.stringify(val))
+ 
   const originalSolution = localTask.value?.solution
- // const inputValue = null// дописать реализацию
+ 
   if (inputValue == originalSolution) {
     console.log('originalSolution ' + originalSolution)
     console.log('Все правильно!')
@@ -42,7 +42,7 @@ const compareSolution = (inputValue: string) => {
 </script>
 <template>
   <div>
-    <button @click="goBack">Назад</button>
+    <el-button @click="goBack">Назад</el-button>
     <h1>{{ localTask?.description }}</h1>
     <p v-if="localTask">Сложность: {{ localTask?.complexity }}</p>
     <p v-if="localTask">Язык: {{ localTask?.language }}</p>
@@ -56,6 +56,6 @@ const compareSolution = (inputValue: string) => {
       :height="300"
       @contentChange="inputValue => compareSolution(inputValue)"
     ></Monaco>
-    <button @click="compareSolutionWrapper">Сравнить с решением</button>
+    <el-button @click="compareSolutionWrapper">Сравнить с решением</el-button>
   </div>
 </template>

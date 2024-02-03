@@ -27,7 +27,7 @@ onMounted(() => {
 
 <template>
     <div v-if="localUser">
-<button @click="goBack">Назад</button>
+<el-button @click="goBack">Назад</el-button>
 <h2>Имя : {{localUser.name}}</h2>
         <p>Почта :{{localUser?.email}}</p>
         <p>Роль :{{localUser.role}}</p>

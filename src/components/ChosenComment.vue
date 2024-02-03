@@ -54,20 +54,20 @@ const sendComment = ()=>{
 
 <template>
   <div>
-    <button @click="goBack">На главную</button>
-    <button @click="goToSolution">Вернуться к решению задачи</button>
+    <el-button @click="goBack">На главную</el-button>
+    <el-button @click="goToSolution">Вернуться к решению задачи</el-button>
     <div>{{ getTaskDescription() }}</div>
     <h2>Комментарии</h2>
-    <ul>
-      <li v-for="comment in comments" :key="comment.idTask">
+    <el-ul>
+      <el-li v-for="comment in comments" :key="comment.idTask">
         <div>{{ comment.commentText }}</div>
-      </li>
-    </ul>
+      </el-li>
+    </el-ul>
     <h2>Введите комментарий</h2>
-    <form id = 'comment-form' a @submit.prevent="sendComment">
-        <input type="text"  v-model="commentText" >
-        <button @click="sendComment">Прокомментировать</button>
-    </form>
+    <el-form id = 'comment-form' a @submit.prevent="sendComment">
+        <el-input type="text"  v-model="commentText" />
+        <el-button @click="sendComment">Прокомментировать</el-button>
+    </el-form>
   </div>
 </template>
 
