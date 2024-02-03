@@ -3,32 +3,32 @@
     <h1>Список задач</h1>
     <div class="filtr">
       <div>
-        <label for="complexityFilter">Выберете сложность :</label>
-        <select id="complexityFilter" v-model="selectedComplexity" @change="filterTasks">
-          <option value="">Все сложности</option>
-          <option value="5">Легкие</option>
-          <option value="15">Средние</option>
-          <option value="20">Сложные</option>
-        </select>
+        <el-label for="complexityFilter">Выберете сложность :</el-label>
+        <el-select id="complexityFilter" v-model="selectedComplexity" @change="filterTasks" placeholder = "Все сложности">
+          <el-option value="">Все сложности</el-option>
+          <el-option value="5">Легкие</el-option>
+          <el-option value="15">Средние</el-option>
+          <el-option value="20">Сложные</el-option>
+        </el-select>
       </div>
 
       <div>
-        <label for="languageFilter">Выберете язык:</label>
-        <select id="languageFilter" v-model="selectedLanguage" @change="filterTasks">
-          <option value="">Все языки</option>
-          <option value="JavaScript">JavaScript</option>
-          <option value="TypeScript">TypeScript</option>
-        </select>
+        <el-label for="languageFilter">Выберете язык:</el-label>
+        <el-select id="languageFilter" v-model="selectedLanguage" @change="filterTasks" placeholder="Все языки">
+          <el-option value="">Все языки</el-option>
+          <el-option value="JavaScript">JavaScript</el-option>
+          <el-option value="TypeScript">TypeScript</el-option>
+        </el-select>
       </div>
 
       <div>
-        <label for="tagFilter">Выберете тег:</label>
-        <select id="tagFilter" v-model="selectedTag" @change="filterTasks">
-          <option value="">Все теги</option>
-          <option value="Aлгоритмы">Aлгоритмы</option>
-          <option value="Cтруктуры данных">Cтруктуры данных</option>
-          <option value="Динамическое программирование">Динамическое программирование</option>
-        </select>
+        <el-label for="tagFilter">Выберете тег:</el-label>
+        <el-select id="tagFilter" v-model="selectedTag" @change="filterTasks" placeholder="Все теги">
+          <el-option value="">Все теги</el-option>
+          <el-option value="Aлгоритмы">Aлгоритмы</el-option>
+          <el-option value="Cтруктуры данных">Cтруктуры данных</el-option>
+          <el-option value="Динамическое программирование">Динамическое программирование</el-option>
+        </el-select>
       </div>
     </div>
     <ul>
@@ -37,8 +37,8 @@
         <p>Сложность: {{ task.complexity }}</p>
         <p>Язык: {{ task.language }}</p>
         <p>Тег: {{ task.tag }}</p>
-        <button @click="selectTask(task.id)">Выбрать задачу</button>
-        <button  @click="selectComment(task.id)">Посмотреть комментарии</button>
+        <el-button @click="selectTask(task.id)">Выбрать задачу</el-button>
+        <el-button  @click="selectComment(task.id)">Посмотреть комментарии</el-button>
       </li>
     </ul>
     <ChosenTask :task="selectedTask" v-if="selectedTask" />
@@ -108,6 +108,7 @@ return this.comments.find((comment)=>comment.idTask === this.selectedTaskId)
 <style>
 .filtr {
   display: flex;
+  justify-content: space-between;
 }
 </style>
 
