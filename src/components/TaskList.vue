@@ -3,7 +3,7 @@
     <h1>Список задач</h1>
     <div class="filtr">
       <div>
-        <el-label for="complexityFilter">Выберете сложность :</el-label>
+        <label for="complexityFilter">Выберете сложность :</label>
         <el-select id="complexityFilter" v-model="selectedComplexity" @change="filterTasks" placeholder = "Все сложности">
           <el-option value="">Все сложности</el-option>
           <el-option value="5">Легкие</el-option>
@@ -13,7 +13,7 @@
       </div>
 
       <div>
-        <el-label for="languageFilter">Выберете язык:</el-label>
+        <label for="languageFilter">Выберете язык:</label>
         <el-select id="languageFilter" v-model="selectedLanguage" @change="filterTasks" placeholder="Все языки">
           <el-option value="">Все языки</el-option>
           <el-option value="JavaScript">JavaScript</el-option>
@@ -22,7 +22,7 @@
       </div>
 
       <div>
-        <el-label for="tagFilter">Выберете тег:</el-label>
+        <label for="tagFilter">Выберете тег:</label>
         <el-select id="tagFilter" v-model="selectedTag" @change="filterTasks" placeholder="Все теги">
           <el-option value="">Все теги</el-option>
           <el-option value="Aлгоритмы">Aлгоритмы</el-option>
