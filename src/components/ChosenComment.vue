@@ -58,11 +58,11 @@ const sendComment = ()=>{
     <el-button @click="goToSolution">Вернуться к решению задачи</el-button>
     <div>{{ getTaskDescription() }}</div>
     <h2>Комментарии</h2>
-    <el-ul>
-      <el-li v-for="comment in comments" :key="comment.idTask">
+    <ul>
+      <li v-for="comment in comments" :key="comment.idTask">
         <div>{{ comment.commentText }}</div>
-      </el-li>
-    </el-ul>
+      </li>
+    </ul>
     <h2>Введите комментарий</h2>
     <el-form id = 'comment-form' a @submit.prevent="sendComment">
         <el-input type="text"  v-model="commentText" />

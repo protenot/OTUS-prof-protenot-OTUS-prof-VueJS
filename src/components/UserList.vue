@@ -6,14 +6,14 @@
 <h1>Список пользователей</h1>
 <div class = "user-list">
 
-    <el-ul>
-        <el-li v-for = "user in users" :key="user.id" >
+    <ul>
+        <li v-for = "user in users" :key="user.id" >
         <h2>{{user.name}}</h2>
         <p>{{user.email}}</p>
         <p>{{user.role}}</p>
         <el-button @click = "selectUser(user.id)"> Посмотреть профиль</el-button>
-        </el-li>
-    </el-ul>
+        </li>
+    </ul>
     <ChosenUser :user="selectedUser" v-if = "selectedUser"/>
 </div> 
 </div>
