@@ -9,7 +9,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
-        <!--  <RouterLink to="/task:id">Task</RouterLink> -->
+        <RouterLink to="/users">Users</RouterLink>
+        
       </nav>
     </div>
   </header>
@@ -18,7 +19,5 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <style scoped>
-body {
-  background-color: pink;
-}
+
 </style>

@@ -4,6 +4,8 @@ import ChosenUser from '../components/ChosenUser.vue'
 import UserList from '../components/UserList.vue'
 import ChosenTask from '../components/ChosenTask.vue'
 import ChosenComment from '../components/ChosenComment.vue'
+import Page404 from '../components/page404.vue'
+
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
@@ -32,6 +34,10 @@ const router = createRouter({
       path: '/users/:id',
       name: 'profile',
       component: ChosenUser
+    },
+
+    {path:"/:catch(.*)*",
+    component: Page404
     }
   ]
 })
