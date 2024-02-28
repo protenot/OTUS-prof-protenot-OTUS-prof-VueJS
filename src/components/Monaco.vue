@@ -93,7 +93,7 @@ onMounted(() => {
     lineNumbersMinChars: 5, //Наименьший символ номера строки   number
     readOnly: false //true | false
   })
-  console.log(editor.value.value)
+
   editor.value.onDidChangeModelContent(() => {
     //Возвращает значение родительскому компоненту в режиме реального времени при изменении содержимого
     emit('contentChange', toRaw(editor.value).getValue())
@@ -104,7 +104,6 @@ watchEffect(() => {
   //Прослушайте изменения в значении родительского компонента и переназначите значение редактору
   if (editor.value) toRaw(editor.value).setValue(props.value)
 })
-console.log(watchEffect)
 </script>
 <template>
   <div class="editorapp">

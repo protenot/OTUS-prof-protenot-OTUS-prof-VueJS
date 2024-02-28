@@ -21,9 +21,4 @@ export default {
   </div>
 </template>
 
-<style scoped>
-/* @import '.src/assets/style/main.css' */
-body {
-  background-color: pink;
-}
-</style>
+<style scoped></style>
