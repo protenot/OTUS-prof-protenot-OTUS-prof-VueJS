@@ -28,7 +28,7 @@ export const useChosenCommentStore = defineStore({
                     commentText
                 }
                 COMMENTS.push(newComment);
-               // await this.loadComments(idTask)
+                await this.loadComments(idTask)
             }
 
         }

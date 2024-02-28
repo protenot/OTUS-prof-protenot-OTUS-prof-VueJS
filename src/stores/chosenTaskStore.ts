@@ -1,6 +1,6 @@
-import { defineStore } from 'pinia'
-import { TASKS } from '@/fakeDB/tasks'
-import type { Task } from '@/models/task.model'
+import { defineStore } from 'pinia';
+import { TASKS } from '@/fakeDB/tasks';
+import type { Task } from '@/models/task.model';
 
 export const useChosenTaskStore = defineStore( {
   id:'chosenTask',
