@@ -35,7 +35,7 @@ const router = createRouter({
       component: ChosenUser
     },
 
-    { path: '/:catch(.*)*', component: () => import('../components/page404.vue') }
+    { path: '/:catch(.*)*', component: () => import('../components/Page404.vue') }
   ]
 })
 
