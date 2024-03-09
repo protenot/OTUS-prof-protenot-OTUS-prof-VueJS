@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Home from '../views/Home.vue'
+import ChosenUser from '../components/ChosenUser.vue'
+import UserList from '../components/UserList.vue'
+import ChosenTask from '../components/ChosenTask.vue'
+import ChosenComment from '../components/ChosenComment.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,16 +11,31 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Home
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
+      path: '/task/:id',
+      name: 'task',
+      component: ChosenTask
+    },
+    {
+      path: '/comments/:idTask',
+      name: 'comments',
+      component: ChosenComment
+    },
+    {
+      path: '/users',
+      name: 'users',
+      component: UserList
+    },
+
+    {
+      path: '/users/:id',
+      name: 'profile',
+      component: ChosenUser
+    },
+
+    { path: '/:catch(.*)*', component: () => import('../components/Page404.vue') }
   ]
 })
 
